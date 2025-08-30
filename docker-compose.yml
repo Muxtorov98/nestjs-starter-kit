@@ -32,5 +32,10 @@ services:
       - POSTGRES_USER=${DATABASE_USER}
       - POSTGRES_DB=${DOCKER_PROJECT_NAME}
 
+  redis:
+    image: redis:6.0.10-alpine
+    restart: always
+    container_name: ${DOCKER_PROJECT_NAME}_redis
+
 volumes:
   postgres_data:
